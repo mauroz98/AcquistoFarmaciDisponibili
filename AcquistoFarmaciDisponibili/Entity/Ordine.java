@@ -2,20 +2,18 @@ package Entity;
 
 import java.util.ArrayList;
 
-/**
- CREAZIONE ORDINE
- */
+
 public class Ordine {
 
+	
+	//dichiarazione variabili
 	private String codiceRicetta;
 	private int identificativo;
 	private Stato stato = Stato.PENDENTE;
-	
-	public ClienteRegistrato proprietrario;
-	
+	public ClienteRegistrato proprietrario; //?
 	private ArrayList<OrdineFarmaco> farmaco_ord = new ArrayList<OrdineFarmaco>();
 	
-	
+	//costruttore
 	public Ordine(String codiceRicetta,Farmaco[] farmaco, int [] qtaFarmaco) {
 		
 		this.identificativo++;
@@ -57,8 +55,4 @@ public class Ordine {
 	public String toString() {
 		return "ORDINE: Codice ordine: "+identificativo+", Codice ricetta: "+codiceRicetta+","+farmaco_ord;
 	}
-
-
-
-
 }

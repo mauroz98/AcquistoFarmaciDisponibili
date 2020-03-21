@@ -5,14 +5,12 @@ import Entity.Ordine;
 import Entity.Stato;
 import Entity.Farmaco;
 
-/**
- * 
- */
 public class GestoreAcquisti {
 	
+	//dichiarazione variabili
 	ArrayList<Farmaco> Farmaci_disponibili;
 	
-
+	//costruttore
 	public GestoreAcquisti() {
 		Farmaci_disponibili = new ArrayList<Farmaco>();
 	}
@@ -30,7 +28,6 @@ public class GestoreAcquisti {
 	}
 
 	public void generaReport() {
-		// TODO implement here
 	}
 
 }

@@ -14,75 +14,71 @@ public class Main {
 			String Nprincipio = "Paracetamolo";
 			int qtaResiduaPrincipio = 30;
 			String tipoPrincipio = "antinfiammatorio";
-			
 			PrincipioAttivo Pa = new PrincipioAttivo(Nprincipio, tipoPrincipio, qtaResiduaPrincipio);
 			
 			Nprincipio = "Ketoprofene";
 			qtaResiduaPrincipio = 20;
 			tipoPrincipio = "antinfiammatorio";
-			
 			PrincipioAttivo Pa1 = new PrincipioAttivo(Nprincipio, tipoPrincipio, qtaResiduaPrincipio);
 			
 			Nprincipio = "Rinazina";
-			qtaResiduaPrincipio = 20;
+			qtaResiduaPrincipio = 17;
 			tipoPrincipio = "antiAggreganti";
-			
 			PrincipioAttivo Pa2 = new PrincipioAttivo(Nprincipio, tipoPrincipio, qtaResiduaPrincipio);
 			
 			Nprincipio = "Sodio Citrato";
-			qtaResiduaPrincipio = 20;
+			qtaResiduaPrincipio = 31;
 			tipoPrincipio = "antiAcidi";
-			
 			PrincipioAttivo Pa3 = new PrincipioAttivo(Nprincipio, tipoPrincipio, qtaResiduaPrincipio);
 			
 			Nprincipio = "Acido Citrico";
-			qtaResiduaPrincipio = 20;
+			qtaResiduaPrincipio = 13;
 			tipoPrincipio = "Analgesico";
-			
 			PrincipioAttivo Pa4 = new PrincipioAttivo(Nprincipio, tipoPrincipio, qtaResiduaPrincipio);
 			
-			
+			int codice = 1;
 			String nomeFarmaco = "Tachipirina";
 			double prezzoFarmaco = (float) 7.5;
-			int qtaFarmaco = 45;
-			boolean is_prescrivibile = true;
+			int qtaFarmaco = 9;
+			boolean is_prescrivibile = false;
 			TipoFarmaco produzione = TipoFarmaco.COMMERICIALE;
-			
-			Farmaco F = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione);
-			
+			Farmaco F = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione, codice);
 			F.addPrincipioAttivo(Pa);
 			
+			codice = 2;
 			nomeFarmaco = "OKI";
 			prezzoFarmaco = (float) 8.5;
-			qtaFarmaco = 23;
-			is_prescrivibile = true;
+			qtaFarmaco = 8;
+			is_prescrivibile = false;
 			produzione = TipoFarmaco.COMMERICIALE;
-			Farmaco F1 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione);
+			Farmaco F1 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione, codice);
 			F1.addPrincipioAttivo(Pa1);
 			
+			codice = 3;
 			nomeFarmaco = "Pillole alle erbe";
-			prezzoFarmaco = (float) 8.5;
-			qtaFarmaco = 23;
-			is_prescrivibile = true;
+			prezzoFarmaco = (float) 11.5;
+			qtaFarmaco = 13;
+			is_prescrivibile = false;
 			produzione = TipoFarmaco.GALENICO;
-			Farmaco F2 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione);
+			Farmaco F2 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione, codice);
 			F2.addPrincipioAttivo(Pa4);
 			
+			codice = 4;
 			nomeFarmaco = "BIOCHETASI";
 			prezzoFarmaco = (float) 8.5;
-			qtaFarmaco = 23;
-			is_prescrivibile = true;
+			qtaFarmaco = 17;
+			is_prescrivibile = false;
 			produzione = TipoFarmaco.GALENICO;
-			Farmaco F3 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione);
+			Farmaco F3 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione, codice);
 			F3.addPrincipioAttivo(Pa3);
 			
-			
+			codice = 5;
 			nomeFarmaco = "Aspirina";
 			prezzoFarmaco = (float) 8.5;
-			qtaFarmaco = 23;
+			qtaFarmaco = 13;
 			is_prescrivibile = true;
 			produzione = TipoFarmaco.COMMERICIALE;
-			Farmaco F4 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione);
+			Farmaco F4 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione,codice);
 			F4.addPrincipioAttivo(Pa2);
 			
 			gestoreFarmacia.inserisciFarmaco(F);
@@ -100,9 +96,8 @@ public class Main {
 			}
 			
 			String codRicetta= "ABC123";
-			
 			Farmaco [] acquisti = {F1, F4};
-			int [] quantità_acquisti = {2, 7};
+			int [] quantità_acquisti = {3, 5};
 			Ordine o = gestoreAcquisti.acquistaFarmaco(codRicetta, acquisti, quantità_acquisti);
 			
 		

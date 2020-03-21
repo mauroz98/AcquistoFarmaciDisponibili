@@ -4,9 +4,11 @@ package Entity;
 
 public class OrdineFarmaco {
 	
+	//dichiarazione variabili
 	private int quantità;
 	private Farmaco farmaco;	
 	
+	//costruttore
 	public OrdineFarmaco(int quantità, Farmaco farmaco) {
 		this.quantità = quantità;
 		this.farmaco = farmaco;
@@ -29,10 +31,6 @@ public class OrdineFarmaco {
 	}
 	
 	public String toString() {
-		return "Quantità farmaci: "+quantità+" "+farmaco.getNome();
+		return ""+quantità+" "+farmaco.getNome();
 	}
-	
-
-
-
 }

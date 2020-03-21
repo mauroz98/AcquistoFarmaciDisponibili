@@ -7,6 +7,7 @@ import java.util.*;
  */
 public class ClienteRegistrato {
 	
+	//dichiarazione variabili
 	private String nome;
 	private String cognome;
 	private Date dataNascita;
@@ -14,9 +15,8 @@ public class ClienteRegistrato {
 	private String tesseraSanitaria;
 	private String cartaCredito;
 
-	/**
-	 * Default constructor
-	 */
+	
+	 //Costruttore
 	public ClienteRegistrato(String nome,String cognome, Date dataNascita, String codiceFiscale, String tesseraSanitaria, String cartaCredito) {
 		
 		this.nome = nome;
@@ -28,7 +28,6 @@ public class ClienteRegistrato {
 	}
 	
 	public void setNome(String nome) {
-		
 		this.nome = nome;
 	}
 	
@@ -52,31 +51,24 @@ public class ClienteRegistrato {
 	    return nome;
 	    }
 	
-	    public String getCognome() {
-	    return cognome;
+	public String getCognome() {
+	return cognome;
 	    }
 
-	    public Date getDataNascita() {
-	    return dataNascita;
+	public Date getDataNascita() {
+	return dataNascita;
 	    }
 
-	    public String getCodiceFiscale() {
-	    return codiceFiscale;
+	public String getCodiceFiscale() {
+	return codiceFiscale;
 	    }
 
-	    public String getTesseraSanitaria() {
-	    return tesseraSanitaria;
+	public String getTesseraSanitaria() {
+	return tesseraSanitaria;
 	    }
 
-	    public String getCartaDicredito() {
-	    return cartaCredito;
+	public String getCartaDicredito() {
+	return cartaCredito;
 	    }
 	
-
-
-
-
-
-
-
 }

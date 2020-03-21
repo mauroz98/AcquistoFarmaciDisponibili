@@ -4,20 +4,17 @@ import java.util.ArrayList;
 
 import Entity.Farmaco;
 
-/**
- * 
- */
+
 public class GestoreFarmacia {
 	
+	//dichiarazione variabili
 	static ArrayList<Farmaco> Farmaci;
-	
 	ArrayList<Farmaco> Farmaci_disponibili;
 
-	
+	//costruttore
 	public GestoreFarmacia() {
-		Farmaci = new ArrayList<Farmaco>();
-		
-		Farmaci_disponibili = new ArrayList<Farmaco>();
+		Farmaci = new ArrayList<Farmaco>();				//Array di tutti i farmaci
+		Farmaci_disponibili = new ArrayList<Farmaco>();	//Array per l'utente con tutti i farmaci disponibili
 	}
 
 
@@ -40,12 +37,10 @@ public class GestoreFarmacia {
 	public ArrayList<Farmaco> visualizzaListaFarmaci() {
 		
 		for (Farmaco f : Farmaci) {
-			if(f.getQuantitàDisponibile()>0) {
+			if(f.getQuantitàDisponibile()>0) {	//ciclo for che restituisce i farmaci disponibili
 				Farmaci_disponibili.add(f);
 			}
 		}
-		
-		
 		return Farmaci_disponibili;
 	}
 

@@ -7,7 +7,8 @@ import java.util.ArrayList;
  */
 public class Farmaco {
 
-	private int codice =0;
+	//dichiarazione variabili
+	private int codice;
 	private String nome;
 	private Double prezzo;
 	private int quantitàDisponibili;
@@ -15,12 +16,10 @@ public class Farmaco {
 	private boolean prescrivibile;
 	private ArrayList<PrincipioAttivo> principiAttivi = new ArrayList<PrincipioAttivo>();
 
-	/**
-	 * Default constructor
-	 */
-	public Farmaco(String nome, Double prezzo, int quantitàDisponibili, boolean prescrivibile, TipoFarmaco tipoFarmaco) {
+	//costruttore
+	public Farmaco(String nome, Double prezzo, int quantitàDisponibili, boolean prescrivibile, TipoFarmaco tipoFarmaco, int codice) {
 		
-		this.codice++;
+		this.codice = codice;
 		this.nome = nome;
 		this.prezzo = prezzo;
 		this.quantitàDisponibili = quantitàDisponibili;
@@ -35,14 +34,11 @@ public class Farmaco {
 	}
 
 	public int getCodice() {
-		
-		
 		return codice;
 	}
 
 
 	public int getQuantitàDisponibile() {
-		
 		return quantitàDisponibili;
 	}
 	
