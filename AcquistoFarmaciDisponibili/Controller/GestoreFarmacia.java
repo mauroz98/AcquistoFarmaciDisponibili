@@ -7,6 +7,8 @@ import Entity.Farmaco;
 
 public class GestoreFarmacia {
 	
+	private static GestoreFarmacia singleton = new GestoreFarmacia();
+	
 	//dichiarazione variabili
 	static ArrayList<Farmaco> Farmaci;
 	ArrayList<Farmaco> Farmaci_disponibili;
@@ -17,6 +19,9 @@ public class GestoreFarmacia {
 		Farmaci_disponibili = new ArrayList<Farmaco>();	//Array per l'utente con tutti i farmaci disponibili
 	}
 
+	public static GestoreFarmacia getSingleton() {
+		return singleton;
+	}
 
 	public void inserisciFarmaco(Farmaco f) {
 		Farmaci.add(f);

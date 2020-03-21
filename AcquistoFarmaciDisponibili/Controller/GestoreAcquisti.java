@@ -7,12 +7,18 @@ import Entity.Farmaco;
 
 public class GestoreAcquisti {
 	
+	private static GestoreAcquisti singleton = new GestoreAcquisti();
+	
 	//dichiarazione variabili
 	ArrayList<Farmaco> Farmaci_disponibili;
 	
 	//costruttore
 	public GestoreAcquisti() {
 		Farmaci_disponibili = new ArrayList<Farmaco>();
+	}
+	
+	public static GestoreAcquisti getSingleton() {
+		return singleton;
 	}
 
 

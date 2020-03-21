@@ -8,8 +8,8 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-			GestoreFarmacia gestoreFarmacia = new GestoreFarmacia();
-			GestoreAcquisti gestoreAcquisti = new GestoreAcquisti();
+			GestoreFarmacia gestoreFarmacia = GestoreFarmacia.getSingleton();
+			GestoreAcquisti gestoreAcquisti = GestoreAcquisti.getSingleton();
 			
 			String Nprincipio = "Paracetamolo";
 			int qtaResiduaPrincipio = 30;
