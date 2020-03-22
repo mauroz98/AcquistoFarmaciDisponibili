@@ -3,7 +3,7 @@ package AcquistoFarmaciDisponibili;
 import Controller.*;
 import Entity.*;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Main {
 
@@ -11,8 +11,6 @@ public class Main {
 	
 			GestoreFarmacia gestoreFarmacia = GestoreFarmacia.getSingleton();
 			GestoreAcquisti gestoreAcquisti = GestoreAcquisti.getSingleton();
-			
-			Scanner scan = new Scanner(System.in);
 			
 			String Nprincipio = "Paracetamolo";
 			int qtaResiduaPrincipio = 30;
