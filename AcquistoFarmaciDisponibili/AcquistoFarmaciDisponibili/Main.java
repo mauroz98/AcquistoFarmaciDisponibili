@@ -5,8 +5,6 @@ import Entity.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
 public class Main {
 
 	private static Scanner scan;
@@ -96,7 +94,7 @@ public class Main {
 			
 			ArrayList<Farmaco> farmaci_disponibili = gestoreFarmacia.visualizzaListaFarmaci();
 			
-			String codRicetta = null;
+			String codRicetta = "nessuna ricetta";
 			
 			System.out.println("Risultati ricerca: \n");
 			
@@ -108,13 +106,14 @@ public class Main {
 			ArrayList<Farmaco> acquisti2 = new ArrayList<Farmaco>();
 			
 			boolean statoacq = false;
+			boolean insert = false;
 			int w=0;
 			
-			while(statoacq==false) {
+			while(statoacq==false && insert ==false ) {
 				
 				System.out.println("Inserisci il codice del " + (w + 1)+ " Farmaco:");
 				int codiceFarmacoAcquisto = scan.nextInt();
-				if(codiceFarmacoAcquisto == 1){
+				if(codiceFarmacoAcquisto == 1 && codiceFarmacoAcquisto<=5){
 				acquisti2.add(F);
 				}
 				else if(codiceFarmacoAcquisto == 2){
@@ -129,27 +128,40 @@ public class Main {
 				else if(codiceFarmacoAcquisto == 5){
 					acquisti2.add(F4);
 					}
+				else {
+					System.out.println("Errore, codice farmaco inesistente, reinserisci il codice farmaco \n");
+					
+				}
 				System.out.println("Vuoi inserire un altro farmaco? (si/no)");
 				String risposta = scan.next();
 				if(risposta.contentEquals("no")) {
 				statoacq = true;
+				insert = true;
 				}
 				w++;
 				}
 			
 			Farmaco[] acquisti = new Farmaco[acquisti2.size()];
-			
 			acquisti2.toArray(acquisti);
 			
 			for(int k=0;k<acquisti.length;k++) {
-				System.out.println("Inserisci quantità per il farmaco: " +acquisti[k].toString2());
+				System.out.println("Inserisci quantità da acquistare per il farmaco: " +acquisti[k].toString2());
 				quantità_acquisti2.add(scan.nextInt());
+				
 			}
 		
 			int [] quantità_acquisti = new int [quantità_acquisti2.size()];
 			
 			for(int y=0; y<quantità_acquisti.length;y++) {
 				quantità_acquisti[y] = quantità_acquisti2.get(y);
+			}
+			
+			for(int i=0; i<quantità_acquisti.length;i++) {
+				if(quantità_acquisti[i]>acquisti[i].getQuantitàDisponibile() || quantità_acquisti[i]<1) {
+					System.out.println("Errore, quantità farmaco selezionata errata");
+					System.exit(1);
+				}
+			
 			}
 			
 			for(int j=0; j<quantità_acquisti.length;j++) {
@@ -159,16 +171,7 @@ public class Main {
 					codRicetta = scan.next();
 				}
 			}
-			
-			for(int i=0; i<quantità_acquisti.length;i++) {
-				if(quantità_acquisti[i]>acquisti[i].getQuantitàDisponibile()) {
-					System.out.println("Errore, quantità farmaco selezionata eccessiva");
-					System.exit(1);
-				}
-			
-			}
 				Ordine o = gestoreAcquisti.acquistaFarmaco(codRicetta, acquisti, quantità_acquisti);
 				System.out.println(o);
 	}
-
 }
