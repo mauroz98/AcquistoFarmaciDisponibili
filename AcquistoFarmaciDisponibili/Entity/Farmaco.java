@@ -64,7 +64,7 @@ public class Farmaco {
 	}
 	
 	public String toString() {
-		return "Farmaco Disponibile:  "+codice+", "+nome+", prezzo: "+prezzo+", disponibili: "+quantitàDisponibili+", "+principiAttivi+","+tipoFarmaco;
+		return "Farmaco Disponibile:  Codice: "+codice+", "+nome+", prezzo: "+prezzo+", disponibili: "+quantitàDisponibili+", "+principiAttivi+","+tipoFarmaco;
 	}
 
 }

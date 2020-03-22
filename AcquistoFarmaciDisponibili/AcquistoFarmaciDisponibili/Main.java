@@ -3,6 +3,7 @@ package AcquistoFarmaciDisponibili;
 import Controller.*;
 import Entity.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -10,6 +11,8 @@ public class Main {
 	
 			GestoreFarmacia gestoreFarmacia = GestoreFarmacia.getSingleton();
 			GestoreAcquisti gestoreAcquisti = GestoreAcquisti.getSingleton();
+			
+			Scanner scan = new Scanner(System.in);
 			
 			String Nprincipio = "Paracetamolo";
 			int qtaResiduaPrincipio = 30;
@@ -89,19 +92,26 @@ public class Main {
 			
 			ArrayList<Farmaco> farmaci_disponibili = gestoreFarmacia.visualizzaListaFarmaci();
 			
+			String codRicetta = "ABC123";
+			
 			System.out.println("Risultati ricerca: \n");
 			
 			for(Farmaco f: farmaci_disponibili) {
 				System.out.println(f+ "\n");
 			}
 			
-			String codRicetta= "ABC123";
-			Farmaco [] acquisti = {F1, F4};
-			int [] quantità_acquisti = {3, 5};
-			Ordine o = gestoreAcquisti.acquistaFarmaco(codRicetta, acquisti, quantità_acquisti);
+			Farmaco acquisti[]= {F1, F4};
+			int [] quantità_acquisti = {3, 6};
 			
-		
-			System.out.println(o);
+			for(int i=0; i<quantità_acquisti.length;i++) {
+				if(quantità_acquisti[i]>acquisti[i].getQuantitàDisponibile()) {
+					System.out.println("Errore, quantità farmaco selezionata eccessiva");
+					System.exit(1);
+				}
+			
+			}
+				Ordine o = gestoreAcquisti.acquistaFarmaco(codRicetta, acquisti, quantità_acquisti);
+				System.out.println(o);
 	}
 
 }
