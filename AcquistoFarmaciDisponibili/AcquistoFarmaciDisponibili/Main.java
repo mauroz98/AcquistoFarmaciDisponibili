@@ -96,20 +96,20 @@ public class Main {
 			
 			ArrayList<Farmaco> farmaci_disponibili = gestoreFarmacia.visualizzaListaFarmaci();
 			
-			String codRicetta = "ABC123";
+			String codRicetta = null;
 			
 			System.out.println("Risultati ricerca: \n");
 			
 			for(Farmaco f: farmaci_disponibili) {
 				System.out.println(f+ "\n");
 			}
-			ArrayList<Integer> quantità_acquisti2 = new ArrayList<Integer>();
 			
+			ArrayList<Integer> quantità_acquisti2 = new ArrayList<Integer>();
 			ArrayList<Farmaco> acquisti2 = new ArrayList<Farmaco>();
 			
 			boolean statoacq = false;
-
 			int w=0;
+			
 			while(statoacq==false) {
 				
 				System.out.println("Inserisci il codice del " + (w + 1)+ " Farmaco:");
@@ -137,12 +137,9 @@ public class Main {
 				w++;
 				}
 			
-			
-			
 			Farmaco[] acquisti = new Farmaco[acquisti2.size()];
 			
 			acquisti2.toArray(acquisti);
-			
 			
 			for(int k=0;k<acquisti.length;k++) {
 				System.out.println("Inserisci quantità per il farmaco: " +acquisti[k].toString2());
@@ -155,11 +152,9 @@ public class Main {
 				quantità_acquisti[y] = quantità_acquisti2.get(y);
 			}
 			
-			
 			for(int j=0; j<quantità_acquisti.length;j++) {
 				if(acquisti[j].getPrescrivibile()==true) {
 					System.out.println("Il farmaco: " +acquisti[j].toString2()+ " richiede la prescrizione medica. \n" );
-					
 					System.out.println("Inserisci codice ricetta: ");
 					codRicetta = scan.next();
 				}
