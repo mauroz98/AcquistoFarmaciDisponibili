@@ -3,11 +3,17 @@ package AcquistoFarmaciDisponibili;
 import Controller.*;
 import Entity.*;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 
 public class Main {
 
+	private static Scanner scan;
+
 	public static void main(String[] args) {
+		
+			scan = new Scanner(System.in);
 	
 			GestoreFarmacia gestoreFarmacia = GestoreFarmacia.getSingleton();
 			GestoreAcquisti gestoreAcquisti = GestoreAcquisti.getSingleton();
@@ -97,9 +103,67 @@ public class Main {
 			for(Farmaco f: farmaci_disponibili) {
 				System.out.println(f+ "\n");
 			}
+			ArrayList<Integer> quantità_acquisti2 = new ArrayList<Integer>();
 			
-			Farmaco acquisti[]= {F1, F4};
-			int [] quantità_acquisti = {3, 6};
+			ArrayList<Farmaco> acquisti2 = new ArrayList<Farmaco>();
+			
+			boolean statoacq = false;
+
+			int w=0;
+			while(statoacq==false) {
+				
+				System.out.println("Inserisci il codice del " + (w + 1)+ " Farmaco:");
+				int codiceFarmacoAcquisto = scan.nextInt();
+				if(codiceFarmacoAcquisto == 1){
+				acquisti2.add(F);
+				}
+				else if(codiceFarmacoAcquisto == 2){
+				acquisti2.add(F1);
+				}
+				else if(codiceFarmacoAcquisto == 3){
+				acquisti2.add(F2);
+				}
+				else if(codiceFarmacoAcquisto == 4){
+					acquisti2.add(F3);
+					}
+				else if(codiceFarmacoAcquisto == 5){
+					acquisti2.add(F4);
+					}
+				System.out.println("Vuoi inserire un altro farmaco? (si/no)");
+				String risposta = scan.next();
+				if(risposta.contentEquals("no")) {
+				statoacq = true;
+				}
+				w++;
+				}
+			
+			
+			
+			Farmaco[] acquisti = new Farmaco[acquisti2.size()];
+			
+			acquisti2.toArray(acquisti);
+			
+			
+			for(int k=0;k<acquisti.length;k++) {
+				System.out.println("Inserisci quantità per il farmaco: " +acquisti[k].toString2());
+				quantità_acquisti2.add(scan.nextInt());
+			}
+		
+			int [] quantità_acquisti = new int [quantità_acquisti2.size()];
+			
+			for(int y=0; y<quantità_acquisti.length;y++) {
+				quantità_acquisti[y] = quantità_acquisti2.get(y);
+			}
+			
+			
+			for(int j=0; j<quantità_acquisti.length;j++) {
+				if(acquisti[j].getPrescrivibile()==true) {
+					System.out.println("Il farmaco: " +acquisti[j].toString2()+ " richiede la prescrizione medica. \n" );
+					
+					System.out.println("Inserisci codice ricetta: ");
+					codRicetta = scan.next();
+				}
+			}
 			
 			for(int i=0; i<quantità_acquisti.length;i++) {
 				if(quantità_acquisti[i]>acquisti[i].getQuantitàDisponibile()) {
