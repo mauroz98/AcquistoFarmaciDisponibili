@@ -10,7 +10,7 @@ public class Ordine {
 	private String codiceRicetta;
 	private int identificativo;
 	private Stato stato = Stato.PENDENTE;
-	public ClienteRegistrato proprietrario; //?
+	public ClienteRegistrato proprietrario; // il ruolo diventa il nome della variabile membro
 	private ArrayList<OrdineFarmaco> farmaco_ord = new ArrayList<OrdineFarmaco>();
 	
 	//costruttore
