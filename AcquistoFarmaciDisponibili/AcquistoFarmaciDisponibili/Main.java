@@ -72,7 +72,7 @@ public class Main {
 			nomeFarmaco = "BIOCHETASI";
 			prezzoFarmaco = (float) 8.5;
 			qtaFarmaco = 17;
-			is_prescrivibile = false;
+			is_prescrivibile = true;
 			produzione = TipoFarmaco.GALENICO;
 			Farmaco F3 = new Farmaco(nomeFarmaco, prezzoFarmaco, qtaFarmaco, is_prescrivibile, produzione, codice);
 			F3.addPrincipioAttivo(Pa3);
