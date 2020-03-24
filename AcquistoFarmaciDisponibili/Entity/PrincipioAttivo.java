@@ -1,7 +1,5 @@
 package Entity;
 
-
-
 public class PrincipioAttivo {
 	
 	//dichiarazione variabili

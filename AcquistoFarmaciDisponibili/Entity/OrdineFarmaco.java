@@ -1,7 +1,5 @@
 package Entity;
 
-
-
 public class OrdineFarmaco {
 	
 	//dichiarazione variabili

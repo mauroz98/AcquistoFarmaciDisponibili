@@ -21,7 +21,6 @@ public class GestoreAcquisti {
 		return singleton;
 	}
 
-
 	public Ordine acquistaFarmaco(String codice_ricetta, Farmaco[] farmaco, int[] qtaFarmaco ) {
 		
 		Ordine o = new Ordine(codice_ricetta, farmaco, qtaFarmaco);

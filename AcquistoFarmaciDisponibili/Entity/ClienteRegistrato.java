@@ -2,9 +2,6 @@ package Entity;
 
 import java.util.*;
 
-/**
- * 
- */
 public class ClienteRegistrato {
 	
 	//dichiarazione variabili
@@ -15,7 +12,6 @@ public class ClienteRegistrato {
 	private String tesseraSanitaria;
 	private String cartaCredito;
 
-	
 	 //Costruttore
 	public ClienteRegistrato(String nome,String cognome, Date dataNascita, String codiceFiscale, String tesseraSanitaria, String cartaCredito) {
 		
@@ -70,5 +66,4 @@ public class ClienteRegistrato {
 	public String getCartaDicredito() {
 	return cartaCredito;
 	    }
-	
 }

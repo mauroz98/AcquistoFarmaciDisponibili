@@ -1,9 +1,5 @@
 package Boundary;
 
-
-/**
- * 
- */
 public class BFarmacista {
 
 	

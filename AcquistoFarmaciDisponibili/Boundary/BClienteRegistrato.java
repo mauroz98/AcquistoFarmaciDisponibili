@@ -1,7 +1,5 @@
 package Boundary;
-/**
- * 
- */
+
 public class BClienteRegistrato {
 
 	public BClienteRegistrato() {

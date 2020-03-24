@@ -1,6 +1,5 @@
 package BoundaryEsterno;
 
-
 public class BsistemaTempo {
 
 	public BsistemaTempo() {

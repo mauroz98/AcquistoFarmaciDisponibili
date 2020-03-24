@@ -2,9 +2,6 @@ package Entity;
 
 import java.util.ArrayList;
 
-/**
- * 
- */
 public class Farmaco {
 
 	//dichiarazione variabili
@@ -27,7 +24,6 @@ public class Farmaco {
 		this.prescrivibile = prescrivibile;
 		
 	}
-	
 	
 	public void addPrincipioAttivo(PrincipioAttivo p) {
 		principiAttivi.add(p);
@@ -70,5 +66,4 @@ public class Farmaco {
 	public String toString2() {
 		return nome;
 	}
-
 }

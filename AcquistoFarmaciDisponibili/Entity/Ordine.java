@@ -2,10 +2,8 @@ package Entity;
 
 import java.util.ArrayList;
 
-
 public class Ordine {
 
-	
 	//dichiarazione variabili
 	private String codiceRicetta;
 	private int identificativo;
@@ -22,9 +20,7 @@ public class Ordine {
 		for(int i = 0; i< farmaco.length; i++) {
 			
 			farmaco_ord.add(new OrdineFarmaco(qtaFarmaco[i], farmaco[i]));
-			
 		}
-		
 	}
 	
 	public int getIdentificativo() {

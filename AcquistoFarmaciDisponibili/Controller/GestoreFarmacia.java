@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import Entity.Farmaco;
 
-
 public class GestoreFarmacia {
 	
 	private static GestoreFarmacia singleton = new GestoreFarmacia();
